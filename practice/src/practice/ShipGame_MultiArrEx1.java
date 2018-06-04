@@ -22,7 +22,8 @@ public class ShipGame_MultiArrEx1 {
 			};
 		//1행에 행번호를, 1열에 열번호를 저장한다.
 		for(int i=1;i<SIZE;i++)
-			board[0][1] = board[i][0] = (char)(i+'0');
+			board[0][i] = board[i][0] = (char)(i+'0');
+		
 		
 		Scanner scanner = new Scanner(System.in);
 		
@@ -32,7 +33,7 @@ public class ShipGame_MultiArrEx1 {
 		 
 		 if(input.length() ==2 ) { //두 글자를 입력한 경우
 			 x= input.charAt(0) - '0'; // 문자를 숫자로 변환
-			 y= input.charAt(0) - '0'; 
+			 y= input.charAt(1) - '0'; 
 			 
 			 if(x==0 && y ==0) //x와 y가 모두 0인 경우 종료
 				 break;
@@ -45,7 +46,11 @@ public class ShipGame_MultiArrEx1 {
 		 // shipBoard[x-1][y-1]의 값이 1이면, 'o'를 board[x][y]에 저장한다.
 		 board[x][y] = shipBoard[x-1][y-1]==1 ? 'O' : 'X';
 		 // 배열 board의 내용을 화면에 출력한다.
-		 for (int i=0;i<SIZE;i++)
+		 
+		 for (int i=0;i<SIZE;i++) {
+			 System.out.println(board[i]);
+		 }
+			 
 			System.out.println();
 		 
 			
