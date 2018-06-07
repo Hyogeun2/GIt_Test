@@ -4,23 +4,43 @@ import java.util.*; //scanner 클래스를 사용하기 위해 추가
 
 import practice.MyMath3.array;
 
+class Scannerin{
+	Scanner scanner = new Scanner(System.in);
+
+	
+	while(true) {
+		String input = scanner.nextLine(); //화면입력받은 내용을 input에 저장
+	    
+		if(input.length()==2) { // 두 글자를 입력한 경우
+			int a = input.charAt(0) - '0'; //문자를 숫자로 변환
+			int b = input.charAt(1) - '0';
+			
+			if(a==0 && b==0)
+				break;
+	}
+
+  }
+}
+
+
 public class OverloadingTest {
 
 	public static void main(String[] args) {
 		MyMath3 mm = new MyMath3();
-		Scanner scanner = new Scanner(System.in);
+		Scannerin in = new Scannerin();
+		System.out.println(in.a);
+		System.out.println(in.b);
 		
 		System.out.println("두자리 정수를 하나 입력해주세요.>");
-		int num = scanner.nextInt();
+		
 		System.out.println("mm.add(3,3) 결과:" + mm.add(3,3));
 		System.out.println("mm.add(3L,3) 결과:" + mm.add(3L,3));
 		System.out.println("mm.add(3,3L) 결과:" + mm.add(3,3L));
 		System.out.println("mm.add(3L,3L) 결과 :" + mm.add(3L,3L));
 		System.out.println("mm.add(k) 결과:" + mm.add(array.k)); //static 클래스 만들기
-		int [] k = {200,400,500};
+	    int [] k = {3,3,3,3};
 		System.out.println("mm.add(k) 결과:" + mm.add(k));
-		System.out.println("scanner 메서드의 결과" + mm.add(num,num));
-
+        System.out.println(mm.add(in.a,in.b));		
 	}
 	
 
@@ -57,5 +77,8 @@ static class array{
 	
 	static int [] k = {3,2,1};
 	
+}
+
+ 
 }
 }
